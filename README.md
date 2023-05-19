@@ -1,1 +1,2 @@
 # unity-fit-screen-resolution
+One of the most challenging subjects for game developers is to make their game look the same in all mobile devices with various screen resolutions and aspect ratios. This project aims at making a unity game that supports all screen sizes with some simple scripts. Scripts used in the project are based on this tutorial: https://awesometuts.com/blog/support-mobile-screen-sizes-unity/
