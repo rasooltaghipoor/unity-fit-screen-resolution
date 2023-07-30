@@ -15,12 +15,20 @@ public class ScaleToFitScreen : MonoBehaviour
         // then multiplying it with screen width
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
+        float bWidth, bHeight;
+        bWidth = worldScreenWidth;
+        bHeight = sr.sprite.bounds.size.y * bWidth / sr.sprite.bounds.size.x;
+        if (bHeight < worldScreenHeight)
+        {
+            bHeight = worldScreenHeight;
+            bWidth = sr.sprite.bounds.size.x * bHeight / sr.sprite.bounds.size.y;
+        }
+
         // to scale the game object we divide the world screen width with the
         // size x of the sprite, and we divide the world screen height with the
         // size y of the sprite
         transform.localScale = new Vector3(
-            worldScreenWidth / sr.sprite.bounds.size.x,
-            worldScreenHeight / sr.sprite.bounds.size.y, 1);
+            bWidth / sr.sprite.bounds.size.x,
+            bHeight / sr.sprite.bounds.size.y, 1);
     }
-
 } // class
